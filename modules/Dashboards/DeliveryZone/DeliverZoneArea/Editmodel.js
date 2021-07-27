@@ -55,7 +55,7 @@ export default function CustomizedDialogs(props) {
   return (
     <div>
      
-      <Dialog onClose={props.close} aria-labelledby="customized-dialog-title" open={props.open} maxWidth="xl">
+      <Dialog onClose={props.close} aria-labelledby="customized-dialog-title" open={props.open} maxWidth="md" fullWidth>
        
         <DialogContent >
       {props.children}

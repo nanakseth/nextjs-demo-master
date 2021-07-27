@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import clsx from 'clsx';
 import moment from 'moment';
 import EditIcon from '@material-ui/icons/Edit';
-import { Grid, Box, Typography, Checkbox ,Switch,Tooltip,IconButton, Avatar} from '@material-ui/core';
+import { Grid, Box, Typography, Checkbox ,Switch,Tooltip,IconButton} from '@material-ui/core';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import CmtAvatar from '../../../../../@coremat/CmtAvatar';
 import CmtList from '../../../../../@coremat/CmtList';
@@ -17,14 +17,13 @@ const useStyles = makeStyles((theme) => ({
     padding: '7px 24px 7px 12px',
     width:"100%",
     transition: 'all .2s',
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.primary.main, 0.04),
+    backgroundColor: alpha(theme.palette.primary.main, 0.04),
       transform: 'translateY(-4px)',
       boxShadow: `0 3px 10px 0 ${alpha(theme.palette.common.dark, 0.2)}`,
       '& $titleRoot': {
         color: theme.palette.text.primary,
       },
-    },
+   
   },
   titleRoot: {
     color: theme.palette.text.disabled,
@@ -33,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     width: '100%',
-     display:'flex',
+    display:'flex',
     justifyContent:'center'
   },
   dots: {
@@ -63,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.warning.main,
   },
 }));
-const TaskItem = ({ item ,index}) => {
+const TaskItem = ({ item }) => {
 
   const [isCompleted, setIsCompleted] = useState(item.completed);
   useEffect(()=>{
@@ -79,13 +78,11 @@ const TaskItem = ({ item ,index}) => {
       <GridContainer>
         <Grid item xs={12} sm={12}  >
           <div style={{ display: 'flex', alignItems: 'center',justifyContent:'space-evenly' }}>
-          <Typography className={classes.titleRoot} >{index+1}</Typography>
-            
-             <div className={classes.titleRoot}>
-<Avatar ></Avatar>
-             </div>
-               <Typography className={classes.titleRoot} >{item.contact}</Typography>
-               <Typography className={classes.titleRoot}>{item.Email}</Typography>
+          <Typography className={classes.titleRoot}>{item.number}</Typography>
+             <Typography className={classes.titleRoot}>{item.DPP}</Typography>
+              <Typography className={classes.titleRoot} >{item.DPN}</Typography>
+               <Typography className={classes.titleRoot} >{item.status}</Typography>
+
           </div>
         </Grid>
        

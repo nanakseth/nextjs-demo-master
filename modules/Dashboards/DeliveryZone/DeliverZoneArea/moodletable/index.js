@@ -13,6 +13,7 @@ import CmtList from '../../../../../@coremat/CmtList';
 
 import { crm } from '../../../../../@fake-db';
 import TaskItem from './TaskItem';
+import TaskItemHead from './TaskItemHead';
 
 const useStyles = makeStyles((theme) => ({
   headerRoot: {
@@ -89,7 +90,12 @@ const TasksList = (props) => {
 
   const classes = useStyles();
 
-
+const itemhead=[{
+  number:"#",
+  DPN:"Delivery Person Name",
+  DPP:"Delivery Person Profile",
+  status:"status"
+}]
 
   useEffect(() => {
     setVisibleItems(crm.DeliveryZone);
@@ -139,8 +145,8 @@ const TasksList = (props) => {
       <CmtCardContent className={classes.cardContentRoot}>
         <PerfectScrollbar className={classes.scrollbarRoot}>
 
-          
-          <CmtList data={getVisibleItems()} renderRow={(item, index) => <TaskItem item={item} key={index} />}  />
+          <CmtList data={itemhead} renderRow={(item, index) => <TaskItemHead item={item} key={index} />}/>
+          <CmtList data={getVisibleItems()} renderRow={(item, index) => <TaskItem item={item} key={index} index={index}/>}  />
         </PerfectScrollbar>
         {visibleItems.length > visibleItemsNo && (
           <Box pt={1} px={6} pb={6}>
