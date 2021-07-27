@@ -81,15 +81,18 @@ const NavMenuItem = (props) => {
 
     return null;
   };
-
+  const pathsplit= router.pathname.split("/")
+  const mainpath="/"+pathsplit[1]+"/"+pathsplit[2]
+ {console.log(mainpath)}
   return (
     <List component="div" className={clsx(classes.navMenuItem, 'Cmt-nav-menu-item')}>
       <Link href={link}>
+       
         <a
           className={clsx(
             classes.navMenuLink,
             {
-              active: link === router.pathname,
+              active: link === router.pathname, active: link=== mainpath
             },
             'Cmt-nav-menu-link',
           )}>

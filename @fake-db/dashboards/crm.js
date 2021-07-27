@@ -253,4 +253,33 @@ export const crm = {
     { month: 'Nov', profit: 60, revenue: 50 },
     { month: 'Dec', profit: 0, revenue: 400 },
   ],
+  DeliveryZone:[
+  { id:'101',
+    DeliveryZoneName:'Rajkot',
+    contact:'1234567891',
+    AdminName:'Rajkot',
+    Email:'rajkot@gmail.com',
+    Enable:true,
+    maplink:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118147.68201985101!2d70.75125515704319!3d22.27363079452129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c99f606cc7ad%3A0x8352964fcfd8fc8a!2sSynergy%20Superspeciality%20Hospital!5e0!3m2!1sen!2sin!4v1627321927996!5m2!1sen!2sin"
+  },
+   { id:'101',
+    DeliveryZoneName:'kot',
+    contact:'1234567891',
+    AdminName:'Rajkot',
+    Email:'rajkot@gmail.com',
+    Enable:true,
+    maplink:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118147.68201985101!2d70.75125515704319!3d22.27363079452129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa7e30ad66a50a978!2sShree%20Jalaram%20Raghukul%20Sarvajanik%20Hospital%2C%20Rajkot!5e0!3m2!1sen!2sin!4v1627322142478!5m2!1sen!2sin"
+  },
+   { id:'101',
+    DeliveryZoneName:'Rakot',
+    contact:'1234567891',
+    AdminName:'Rajkot',
+    Email:'rajkot@gmail.com',
+    Enable:true,
+    maplink:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118147.68201985101!2d70.75125515704319!3d22.27363079452129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x426f8ee8740d1420!2sSahyog%20Hospital%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1627322251441!5m2!1sen!2sin"
+  }
+]
 };
+
+
+

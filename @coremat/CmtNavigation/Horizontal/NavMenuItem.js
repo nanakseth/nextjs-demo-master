@@ -52,6 +52,9 @@ const NavMenuItem = (props) => {
     return null;
   };
 
+ const pathsplit= router.pathname.split("/")
+  const mainpath="/"+pathsplit[1]+"/"+pathsplit[2]
+
   return (
     <List component="div" disablePadding onClick={handleClick}>
       <Link href={link}>
@@ -59,7 +62,7 @@ const NavMenuItem = (props) => {
           className={clsx(
             classes.navMenuLink,
             {
-              active: link === router.pathname,
+              active: link === router.pathname, active: link=== mainpath
             },
             'Cmt-nav-menu-link',
           )}>

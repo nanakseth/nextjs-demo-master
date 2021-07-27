@@ -128,39 +128,29 @@ const TableItem = ({ row,index }) => {
 
   return (
     <React.Fragment>
-      <TableRow className={clsx(classes.tableRowRoot, open ? 'active' : '')}>
+      <TableRow className={clsx(classes.tableRowRoot)}>
         <TableCell className={clsx(classes.tableCellRoot, classes.tableCellFirst)}>
          {index+1}
         </TableCell>
         <TableCell className={clsx(classes.tableCellRoot, classes.tableCellSecond)}>
           {row.itemname}
         </TableCell>
-        <TableCell className={clsx(classes.tableCellRoot, classes.tableCellHideShow)} onClick={() => setOpen(!open)}>
-          <div className={classes.hideShowContent}>
-            <div className={classes.showContent}>${row.pendingAmount}</div>
-            <Box
-              className={clsx(classes.hideContent, classes.hideShowLink)}
-              color="primary.main"
-              display="flex"
-              alignItems="center"
-              justifyContent="flex-end">
-              <span style={{ fontWeight: 700 }} className={'mr-2'}>
-                {open ? 'HIDE' : 'DETAIL'}
-              </span>
-              {open ? <ArrowUpward fontSize="small" /> : <ArrowDownwardIcon fontSize="small" />}
-            </Box>
-          </div>
+         <TableCell className={clsx(classes.tableCellRoot,classes.tableCellFourth)} onClick={() => setOpen(!open)}>
+         
+          {row.pendingAmount-100}
+            
+        
         </TableCell>
+        <TableCell className={clsx(classes.tableCellRoot,classes.tableCellFourth)} onClick={() => setOpen(!open)}>
+         
+          {row.pendingAmount}
+            
+        
+        </TableCell>
+        
       </TableRow>
 
-      <TableRow className={clsx(classes.tableRowRoot, open ? 'active' : 'collapse-table-row')}>
-        <TableCell className={classes.tableCellRoot} colSpan={12}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <div className={classes.openDataRot}>
-            4 time served</div>
-          </Collapse>
-        </TableCell>
-      </TableRow>
+    
     </React.Fragment>
   );
 };

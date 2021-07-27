@@ -31,6 +31,7 @@ const TableHeading = () => {
     <TableRow>
       <TableCell className={classes.tableCellRoot}>#</TableCell>
       <TableCell className={classes.tableCellRoot}>Item Name</TableCell>
+       <TableCell className={classes.tableCellRoot}>Quantity Sold</TableCell>
       <TableCell className={classes.tableCellRoot}>Price</TableCell>
     </TableRow>
   );
