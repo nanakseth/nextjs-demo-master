@@ -11,7 +11,7 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import GridContainer from '../../../../@jumbo/components/GridContainer';
 import Editmodel from './Editmodel'
 import Editarea from './Editarea'
-import DeleteModel from '../Deletemoodle'
+import DeleteModel from '../../../Components/newcomponents/Deletemoodle'
 const useStyles = makeStyles((theme) => ({
   taskItemRoot: {
     padding: '7px 24px 7px 12px',

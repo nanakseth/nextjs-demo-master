@@ -101,12 +101,13 @@ const [dstate,setdstate]=useState(false)
 <Grid item sm={2}>
            <Box style={{display:'flex',flexDirection:'row' ,alignItems:'center'}}>
                   <Switch />
-                 <Tooltip title="View" onClick={()=>{router.push("/dashboard/DeliveryPerson/EditDeliveryPerson/19")}} >
+                 <Tooltip title="View" onClick={()=>{router.push("/dashboard/DeliveryPerson/DeliveryPersonOrders/19")}} >
                    <IconButton >
                       <VisibilityIcon/>
                    </IconButton>
                    </Tooltip>
-                   <Tooltip title="Edit" onClick={()=>{router.push("/dashboard/DeliveryPerson/EditDeliveryPerson/19")}}  >
+                   <Tooltip title="Edit" 
+                   onClick={()=>{router.push("/dashboard/DeliveryPerson/EditDeliveryPerson/19")}}  >
                    <IconButton >
                     < EditIcon/>
                    </IconButton>
