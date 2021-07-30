@@ -89,7 +89,7 @@ const TaskItem = ({ item }) => {
                       <VisibilityIcon/>
                    </IconButton>
                    </Tooltip>
-                   <Tooltip title="Edit"   >
+                   <Tooltip title="Edit" onClick={()=>{router.push("/dashboard/DeliveryZone/Editareafield/19")}}  >
                    <IconButton >
                     < EditIcon/>
                    </IconButton>

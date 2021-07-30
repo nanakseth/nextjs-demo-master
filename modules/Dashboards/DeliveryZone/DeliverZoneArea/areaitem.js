@@ -10,6 +10,7 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import GridContainer from '../../../../@jumbo/components/GridContainer';
 import Editmodel from './Editmodel'
+import Editarea from './Editarea'
 const useStyles = makeStyles((theme) => ({
   taskItemRoot: {
     padding: '7px 24px 7px 12px',
@@ -69,7 +70,8 @@ const [model,setmodel]=useState(false)
 
   return (
     <div className={classes.taskItemRoot} onClick={()=>{selectarea(item)}} style={{background:selected?"#3f51b5":"", color:selected?"white":""}}>
-   <Editmodel open={model} close={closemodel}>
+   <Editmodel open={model} close={closemodel} title={"Edit Area"}>
+      <Editarea/>
        </Editmodel>
       <GridContainer >
         <Grid item xs={12} sm={12}  >

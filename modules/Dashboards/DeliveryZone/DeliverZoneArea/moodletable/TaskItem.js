@@ -77,7 +77,7 @@ const TaskItem = ({ item ,index}) => {
   return (
     <div className={classes.taskItemRoot}>
       <GridContainer>
-        <Grid item xs={12} sm={12}  >
+        <Grid item xs={12} sm={12} >
           <div style={{ display: 'flex', alignItems: 'center',justifyContent:'space-evenly' }}>
           <Typography className={classes.titleRoot} >{index+1}</Typography>
             

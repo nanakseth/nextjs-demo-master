@@ -142,7 +142,7 @@ const itemhead=[{
           </div>
         </div>
       </CmtCardHeader>
-      <CmtCardContent className={classes.cardContentRoot}>
+      <CmtCardContent className={classes.cardContentRoot}  style={{maxHeight:'300px',overflowX:'hidden',overflowY:'scroll'}} >
         <PerfectScrollbar className={classes.scrollbarRoot}>
 
           <CmtList data={itemhead} renderRow={(item, index) => <TaskItemHead item={item} key={index} />}/>

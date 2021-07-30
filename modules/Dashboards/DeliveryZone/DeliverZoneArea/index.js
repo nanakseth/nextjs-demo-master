@@ -7,6 +7,7 @@ import GridContainer from '../../../../@jumbo/components/GridContainer';
 import PageContainer from '../../../../@jumbo/components/PageComponents/layouts/PageContainer';
 import Areatable from './Areatable'
 import ModelTable from './moodletable'
+import Editarea from './Editarea' 
 const useStyles = makeStyles((theme) => ({
   orderLg2: {
     [theme.breakpoints.up('lg')]: {
@@ -81,8 +82,8 @@ modeltype==="DP"?
         }
        {
       modeltype==="ADDPLACE"?
-         <Editmodel open={model} close={closemodel}>
-        <div>HRLLO</div>
+         <Editmodel open={model} close={closemodel} title="Add Area">
+        <Editarea/>
        </Editmodel>:null
        }
       

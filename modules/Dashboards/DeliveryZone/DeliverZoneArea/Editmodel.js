@@ -50,19 +50,31 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 export default function CustomizedDialogs(props) {
+  const [open, setOpen] = React.useState(false);
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div>
      
-      <Dialog onClose={props.close} aria-labelledby="customized-dialog-title" open={props.open} maxWidth="md" fullWidth>
-       
-        <DialogContent >
-      {props.children}
+      <Dialog onClose={props.close} aria-labelledby="customized-dialog-title" open={props.open} fullWidth maxWidth="md">
+        <DialogTitle id="customized-dialog-title" onClose={props.close}>
+         {props.title}
+        </DialogTitle>
+        <DialogContent>
+          {props.children}
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={props.close} color="primary">
-          close
+            Close
+          </Button>
+           <Button autoFocus onClick={props.close} color="primary">
+            Submit
           </Button>
         </DialogActions>
       </Dialog>
