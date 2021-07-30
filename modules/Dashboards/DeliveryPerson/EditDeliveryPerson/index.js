@@ -3,6 +3,7 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 import GridContainer from '../../../../@jumbo/components/GridContainer';
 import PageContainer from '../../../../@jumbo/components/PageComponents/layouts/PageContainer';
 import Personalinfo from './personalinfo'
+import Vehicalinfo from './VehicalInformation'
 import { Grid } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   orderLg2: {
@@ -29,8 +30,14 @@ const CrmDashboard = () => {
   return (
     <PageContainer heading="Delivery Person Management" breadcrumbs={breadcrumbs}>
       <GridContainer>
+        
      <Grid item xs={12} >
          <Personalinfo/>
+
+        </Grid> 
+        <Grid item xs={12} style={{marginTop:'20px'}}>
+         <Vehicalinfo/>
+         
         </Grid> 
       </GridContainer>
     </PageContainer>
