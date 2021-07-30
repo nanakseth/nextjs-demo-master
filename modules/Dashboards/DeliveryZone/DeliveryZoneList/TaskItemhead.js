@@ -17,14 +17,13 @@ const useStyles = makeStyles((theme) => ({
     padding: '7px 24px 7px 12px',
     width:"100%",
     transition: 'all .2s',
-    '&:hover': {
       backgroundColor: alpha(theme.palette.primary.main, 0.04),
       transform: 'translateY(-4px)',
       boxShadow: `0 3px 10px 0 ${alpha(theme.palette.common.dark, 0.2)}`,
       '& $titleRoot': {
         color: theme.palette.text.primary,
       },
-    },
+   
   },
   titleRoot: {
     color: theme.palette.text.disabled,
@@ -32,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
-    width: '100%',
+    width: '90%',
   },
   dots: {
     height: 8,
@@ -75,55 +74,30 @@ const [dstate,setdstate]=useState(false)
   return (
     <div className={classes.taskItemRoot}>
       <Deletemodel open={dstate} close={()=>{setdstate(false)}}/>
-     
       <GridContainer alignItems="center"> 
         
 <Grid sm={0.5}>
  <Checkbox checked={isCompleted} onChange={(e) => setIsCompleted(e.target.checked)} />
 </Grid>
       <Grid item sm={2}>
-         <Typography className={classes.titleRoot}>{item.DeliveryZoneName}</Typography>
+         <Typography className={classes.titleRoot}>{item.DZN}</Typography> 
         </Grid> 
         
          <Grid item sm={2}>
-             <Typography className={classes.titleRoot}>{item.contact}</Typography>
+           <Typography className={classes.titleRoot}>{item.contact}</Typography>
         </Grid>
         
          <Grid item sm={2}>
-          <Typography className={classes.titleRoot}>{item.AdminName}</Typography>
+            <Typography className={classes.titleRoot}>{item.AdminName}</Typography> 
         </Grid>  
-         <Grid item  sm={2.5}>
-            <Typography>{item.Email}</Typography>
+         <Grid item  sm={3}>
+            <Typography className={classes.titleRoot}>{item.Email}</Typography>
         </Grid> 
-         <Grid item sm={3}>
-             
-               <Box style={{display:'flex',flexDirection:'row' ,alignItems:'center'}}>
-                  <Switch />
-                 <Tooltip title="View" onClick={()=>{router.push("/dashboard/DeliveryZone/EditArea/19")}} >
-                   <IconButton >
-                      <VisibilityIcon/>
-                   </IconButton>
-                   </Tooltip>
-                   <Tooltip title="Edit" onClick={()=>{router.push("/dashboard/DeliveryZone/Editareafield/19")}}  >
-                   <IconButton >
-                    < EditIcon/>
-                   </IconButton>
-                   </Tooltip>
-
-                  <Tooltip title="Delete"   >
-                   <IconButton onClick={()=>{setdstate(true)}}>
-<DeleteForeverIcon/>
-                   </IconButton>
- 
-                 </Tooltip>
-               
-              
-               </Box>
+         <Grid item sm={2}>
+            <Typography className={classes.titleRoot}>{item.action}</Typography>
         </Grid> 
 
     
-       
-      
        
       </GridContainer>
     </div>

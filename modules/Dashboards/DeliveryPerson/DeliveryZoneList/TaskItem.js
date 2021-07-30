@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import clsx from 'clsx';
 import moment from 'moment';
 import EditIcon from '@material-ui/icons/Edit';
-import { Grid, Box, Typography, Checkbox ,Switch,Tooltip,IconButton} from '@material-ui/core';
+import { Grid, Box, Typography, Checkbox ,Switch,Tooltip,IconButton, Avatar} from '@material-ui/core';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import CmtAvatar from '../../../../@coremat/CmtAvatar';
 import CmtList from '../../../../@coremat/CmtList';
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   titleRoot: {
     color: theme.palette.text.disabled,
-    fontSize: 16,
+    fontSize: 12,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
@@ -81,30 +81,32 @@ const [dstate,setdstate]=useState(false)
 <Grid sm={0.5}>
  <Checkbox checked={isCompleted} onChange={(e) => setIsCompleted(e.target.checked)} />
 </Grid>
-      <Grid item sm={2}>
-         <Typography className={classes.titleRoot}>{item.DeliveryZoneName}</Typography>
+       <Grid item sm={1}>
+         <Avatar></Avatar>
         </Grid> 
         
          <Grid item sm={2}>
-             <Typography className={classes.titleRoot}>{item.contact}</Typography>
+           <Typography className={classes.titleRoot}>{item.Name}</Typography>
         </Grid>
         
          <Grid item sm={2}>
-          <Typography className={classes.titleRoot}>{item.AdminName}</Typography>
+            <Typography className={classes.titleRoot}>{item.Contact}</Typography> 
         </Grid>  
-         <Grid item  sm={2.5}>
-            <Typography>{item.Email}</Typography>
+         <Grid item  sm={1}>
+            <Typography className={classes.titleRoot}>{item.DISOR}</Typography>
         </Grid> 
-         <Grid item sm={3}>
-             
-               <Box style={{display:'flex',flexDirection:'row' ,alignItems:'center'}}>
+         <Grid item sm={2}>
+            <Typography className={classes.titleRoot}>{item.Email}</Typography>
+        </Grid> 
+<Grid item sm={2}>
+           <Box style={{display:'flex',flexDirection:'row' ,alignItems:'center'}}>
                   <Switch />
-                 <Tooltip title="View" onClick={()=>{router.push("/dashboard/DeliveryZone/EditArea/19")}} >
+                 <Tooltip title="View" onClick={()=>{router.push("/dashboard/DeliveryPerson/EditDeliveryPerson/19")}} >
                    <IconButton >
                       <VisibilityIcon/>
                    </IconButton>
                    </Tooltip>
-                   <Tooltip title="Edit" onClick={()=>{router.push("/dashboard/DeliveryZone/Editareafield/19")}}  >
+                   <Tooltip title="Edit" onClick={()=>{router.push("/dashboard/DeliveryPerson/EditDeliveryPerson/19")}}  >
                    <IconButton >
                     < EditIcon/>
                    </IconButton>
@@ -120,7 +122,6 @@ const [dstate,setdstate]=useState(false)
               
                </Box>
         </Grid> 
-
     
        
       

@@ -76,13 +76,13 @@ setselecteditem(crm.DeliveryZone[0])
     <PageContainer heading="Delivery Zone Management" breadcrumbs={breadcrumbs}>
         {
 modeltype==="DP"?
-  <Editmodel open={model} close={closemodel}>
+  <Editmodel open={model} close={closemodel}  title="Delivery person">
          <ModelTable  title="Delivery Person" subtitle="Add, Edit, Manage Delivery person."></ModelTable>
        </Editmodel>:null
         }
        {
       modeltype==="ADDPLACE"?
-         <Editmodel open={model} close={closemodel} title="Add Area">
+         <Editmodel open={model} close={closemodel} title="Edit Area">
         <Editarea/>
        </Editmodel>:null
        }

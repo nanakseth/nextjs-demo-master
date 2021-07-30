@@ -89,7 +89,7 @@ const TasksList = () => {
 
 
   useEffect(() => {
-    setVisibleItems(crm.DeliveryZone);
+    setVisibleItems(rows);
   }, []);
 
 
@@ -104,18 +104,50 @@ const TasksList = () => {
   const getVisibleItems = () => {
     if (searchKeywords) {
       return visibleItems
-        .filter((item) => item.DeliveryZoneName.toLowerCase().includes(searchKeywords.toLowerCase()))
+        .filter((item) => item.Name.toLowerCase().includes(searchKeywords.toLowerCase()))
         .slice(0, visibleItemsNo);
     } else return visibleItems.slice(0, visibleItemsNo);
   };
 const Coloumns=[{
     number:"#",
-    DZN:"DZN" ,
-    contact:"Contact",
-    AdminName:"Admin Name",
+    DPP:"Delivery Person Profile" ,
+    Name:"Delivery Person Name",
+    Contact:"Contact",
+    DISOR:"Driver is Online or Not??",
     Email:"Email",
     action:"Actions" 
 }]
+
+const rows=[{
+    number:"1",
+    DPP:"Should be a url" ,
+     Name:"Nanak ",
+    Contact:"852412154",
+    DISOR:"YES",
+    Email:"nanaksethh2gmail.com",
+   
+},
+{
+    number:"1",
+    DPP:"Should be a url" ,
+    Name:"Nanak ",
+    Contact:"852412154",
+    DISOR:"YES",
+    Email:"nanaksethh2gmail.com",
+   
+},
+{
+    number:"1",
+    DPP:"Should be a url" ,
+      Name:"Nanak ",
+    Contact:"852412154",
+    DISOR:"YES",
+    Email:"nanaksethh2gmail.com",
+   
+},
+
+]
+
 
   return (
     <CmtCard>

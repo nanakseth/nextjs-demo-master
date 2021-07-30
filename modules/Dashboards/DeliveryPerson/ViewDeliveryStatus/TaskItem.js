@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import clsx from 'clsx';
 import moment from 'moment';
 import EditIcon from '@material-ui/icons/Edit';
-import { Grid, Box, Typography, Checkbox ,Switch,Tooltip,IconButton} from '@material-ui/core';
+import { Grid, Box, Typography, Checkbox ,Switch,Tooltip,IconButton, Avatar} from '@material-ui/core';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import CmtAvatar from '../../../../@coremat/CmtAvatar';
 import CmtList from '../../../../@coremat/CmtList';
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   titleRoot: {
     color: theme.palette.text.disabled,
-    fontSize: 16,
+    fontSize: 12,
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
@@ -78,50 +78,29 @@ const [dstate,setdstate]=useState(false)
      
       <GridContainer alignItems="center"> 
         
-<Grid sm={0.5}>
- <Checkbox checked={isCompleted} onChange={(e) => setIsCompleted(e.target.checked)} />
-</Grid>
-      <Grid item sm={2}>
-         <Typography className={classes.titleRoot}>{item.DeliveryZoneName}</Typography>
+
+       <Grid item sm={1}>
+        <Typography className={classes.titleRoot}>{item.number}</Typography>
         </Grid> 
         
          <Grid item sm={2}>
-             <Typography className={classes.titleRoot}>{item.contact}</Typography>
+           <Typography className={classes.titleRoot}>{item.orderid}</Typography>
         </Grid>
         
-         <Grid item sm={2}>
-          <Typography className={classes.titleRoot}>{item.AdminName}</Typography>
-        </Grid>  
-         <Grid item  sm={2.5}>
-            <Typography>{item.Email}</Typography>
-        </Grid> 
          <Grid item sm={3}>
-             
-               <Box style={{display:'flex',flexDirection:'row' ,alignItems:'center'}}>
-                  <Switch />
-                 <Tooltip title="View" onClick={()=>{router.push("/dashboard/DeliveryZone/EditArea/19")}} >
-                   <IconButton >
-                      <VisibilityIcon/>
-                   </IconButton>
-                   </Tooltip>
-                   <Tooltip title="Edit" onClick={()=>{router.push("/dashboard/DeliveryZone/Editareafield/19")}}  >
-                   <IconButton >
-                    < EditIcon/>
-                   </IconButton>
-                   </Tooltip>
-
-                  <Tooltip title="Delete"   >
-                   <IconButton onClick={()=>{setdstate(true)}}>
-<DeleteForeverIcon/>
-                   </IconButton>
- 
-                 </Tooltip>
-               
-              
-               </Box>
+            <Typography className={classes.titleRoot}>{item.Name}</Typography> 
+        </Grid>  
+         <Grid item  sm={2}>
+            <Typography className={classes.titleRoot}>{item.Date}</Typography>
+        </Grid> 
+         <Grid item sm={2}>
+            <Typography className={classes.titleRoot}>{item.time}</Typography>
         </Grid> 
 
-    
+    <Grid item sm={2}>
+            <Typography className={classes.titleRoot}>{item.orders}</Typography>
+        </Grid> 
+
        
       
        

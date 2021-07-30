@@ -11,6 +11,7 @@ import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import GridContainer from '../../../../@jumbo/components/GridContainer';
 import Editmodel from './Editmodel'
 import Editarea from './Editarea'
+import DeleteModel from '../Deletemoodle'
 const useStyles = makeStyles((theme) => ({
   taskItemRoot: {
     padding: '7px 24px 7px 12px',
@@ -63,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
 const TaskItem = ({ item,selectarea,selected}) => {
   
 const [model,setmodel]=useState(false)
+const [dstate,setdstate]=useState(false)
   const classes = useStyles();
   const closemodel=()=>{
       setmodel(!model)
@@ -70,6 +72,7 @@ const [model,setmodel]=useState(false)
 
   return (
     <div className={classes.taskItemRoot} onClick={()=>{selectarea(item)}} style={{background:selected?"#3f51b5":"", color:selected?"white":""}}>
+    <DeleteModel open={dstate} close={()=>{setdstate(false)}}/>
    <Editmodel open={model} close={closemodel} title={"Edit Area"}>
       <Editarea/>
        </Editmodel>
@@ -90,8 +93,8 @@ const [model,setmodel]=useState(false)
                    </IconButton>
                    </Tooltip>
 
-                  <Tooltip title="Delete"  >
-                   <IconButton onClick={closemodel} >
+                  <Tooltip title="Delete"   >
+                   <IconButton onClick={()=>{setdstate(true)}} >
 <DeleteForeverIcon style={{ color:selected?"white":""}} />
                    </IconButton>
  

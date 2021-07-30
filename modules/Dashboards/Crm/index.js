@@ -37,13 +37,13 @@ const useStyles = makeStyles((theme) => ({
 const breadcrumbs = [
   { label: 'Home', link: '/' },
   { label: 'Dashboard', link: '/dashboard' },
-  { label: 'Crm', isActive: true },
+  { label: 'Delivery Person', isActive: true },
 ];
 
 const CrmDashboard = () => {
   const classes = useStyles();
   return (
-    <PageContainer heading="Crm Dashboard" breadcrumbs={breadcrumbs}>
+    <PageContainer heading="Delivery Person Management" breadcrumbs={breadcrumbs}>
       <GridContainer>
         <Grid item xs={12}>
           <WelcomeSummary />

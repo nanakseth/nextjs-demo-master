@@ -26,6 +26,7 @@ import {
   LockOutlined,
   Map,
   MonetizationOn,
+  DirectionsBike,
  
   NotificationImportant,
   Notifications,
@@ -53,9 +54,9 @@ const dashboardsMenus = [
   },
   {
     name: <IntlMessages id={'sidebar.dashboard.crm'} />,
-    icon: <Group />,
+    icon: <DirectionsBike />,
     type: 'item',
-    link: '/dashboard/crm',
+    link: '/dashboard/DeliveryPerson',
   },
   {
     name: <IntlMessages id={'sidebar.dashboard.intranet'} />,
